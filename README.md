@@ -7,3 +7,5 @@ En la aplicación hecha con Spring, se [invierte el control](https://es.wikipedi
 
 
 ![versus](versus.png)
+
+NOTA: el patrón de arquitectura indica que las dependencias se declaren usando interfaces. La última versión de Spring (5.0) soporta el uso de clases directamente para simplificar nuestro código
