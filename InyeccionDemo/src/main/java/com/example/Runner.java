@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.service.NombresService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,20 +12,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Runner implements CommandLineRunner {
 
-    private final NombresService busquedaService;
-
     /**
-     * Al declarar un componente en el constructor, Spring se encarga de
-     * instanciar todo lo necesario para usarlo
+     * Al declarar un componente como Autowired, Spring se encarga de instanciar
+     * todo lo necesario para usarlo. Al igual que ponerlo en el constructor
      */
-    public Runner(NombresService busquedaService) {
-        this.busquedaService = busquedaService;
-    }
+    @Autowired
+    private NombresService busquedaService;
 
     @Override
     public void run(String... strings) throws Exception {
 
-        System.out.println(busquedaService.imprimirNombres());
+        busquedaService.imprimirNombres();
 
     }
 }

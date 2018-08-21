@@ -14,6 +14,7 @@ public class NombresService {
     }
 
     public void imprimirNombres() {
+        System.out.println("== NOMBRES ==");
         System.out.println(dataRepository.leerDatos());
     }
 

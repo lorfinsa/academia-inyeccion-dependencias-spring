@@ -1,7 +1,6 @@
 package com.example.service;
 
 import com.example.repository.DataRepository;
-import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,8 +16,9 @@ public class NombresService {
         this.dataRepository = dataRepository;
     }
 
-    public List<String> imprimirNombres() {
-        return dataRepository.leerDatos();
+    public void imprimirNombres() {
+        System.out.println("== NOMBRES ==");
+        System.out.println(dataRepository.leerDatos());
     }
 
 }
