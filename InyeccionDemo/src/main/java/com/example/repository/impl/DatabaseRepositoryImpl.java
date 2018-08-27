@@ -1,14 +1,14 @@
-package com.example.repository;
+package com.example.repository.impl;
 
 import static java.util.Arrays.asList;
 import java.util.List;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Encapsula el acceso a datos en DB
  */
-@Component
-public class DatabaseRepository {
+@Repository
+public class DatabaseRepositoryImpl {
 
     public List<String> leerDatos() {
         return asList("Jose", "Alberto", "Miguel");

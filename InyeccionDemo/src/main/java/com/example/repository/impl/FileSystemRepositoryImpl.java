@@ -1,14 +1,14 @@
-package com.example.repository;
+package com.example.repository.impl;
 
 import static java.util.Arrays.asList;
 import java.util.List;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Encapsula el acceso a datos en FS
  */
-@Component
-public class FileSystemRepository {
+@Repository
+public class FileSystemRepositoryImpl {
 
     public List<String> leerDatos() {
         return asList("Pepe", "Luis", "Armando");
