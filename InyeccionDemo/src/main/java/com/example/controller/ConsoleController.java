@@ -21,7 +21,7 @@ public class ConsoleController implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        
+                                
         busquedaService.imprimirNombres();
 
     }
