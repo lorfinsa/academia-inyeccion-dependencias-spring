@@ -2,6 +2,8 @@ package com.example.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Persona {
@@ -9,6 +11,20 @@ public class Persona {
     @Id
     private Long id;
     private String nombre;
+    
+    @ManyToOne
+    @JoinColumn(name="idrol")
+    private Rol rol;
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    
+    
 
     public Long getId() {
         return id;
@@ -28,7 +44,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "numero: " + id + ", nombre: " + nombre + '}';
+        return "Persona{" + "numero: " + id + ", nombre: " + nombre + ", rol: " + rol.getDescripcion() + '}';
     }
     
     
