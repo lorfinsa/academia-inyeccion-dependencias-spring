@@ -23,6 +23,7 @@ public class ConsoleController implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         
         busquedaService.imprimirNombres();
+        System.out.println(busquedaService.getClass());
 
     }
 }
