@@ -1,5 +1,6 @@
 package com.example.repository.impl;
 
+import com.example.domain.Persona;
 import static java.util.Arrays.asList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class DatabaseRepositoryImpl {
 
-    public List<String> leerDatos() {
-        return asList("Jose", "Alberto", "Miguel");
+    public List<Persona> leerDatos() {
+        return asList(new Persona("Jose"), new Persona("Alberto"), new Persona("Miguel"));
     }
 
 }

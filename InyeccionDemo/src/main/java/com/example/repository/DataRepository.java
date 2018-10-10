@@ -1,5 +1,6 @@
 package com.example.repository;
 
+import com.example.domain.Persona;
 import java.util.List;
 
 /**
@@ -7,6 +8,6 @@ import java.util.List;
  */
 public interface DataRepository {
 
-    public List<String> leerDatos();
+    public List<Persona> leerDatos();
 
 }
