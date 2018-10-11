@@ -6,6 +6,8 @@ import com.example.service.NombresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.domain.*;
+
 @Service
 public class NombresServiceImpl implements NombresService {
 
@@ -26,7 +28,19 @@ public class NombresServiceImpl implements NombresService {
     public void imprimirNombres() {
         System.out.println("== NOMBRES ==");
         System.out.println(dataRepository.leerDatos());
-        System.out.println(personaJpaRepository.findAll());
+        System.out.println("Resultado de findall : " + personaJpaRepository.findAll());
+        
+        System.out.println("Total de personas : " + personaJpaRepository.count()) ;
+    }
+    
+    @Override
+    public void crearPersonas(Persona per){
+          personaJpaRepository.save(per);
+    } 
+
+    @Override
+    public void obtenerPersonasQueContengan(String nombre) {
+         System.out.println(personaJpaRepository.findByNombreContaining(nombre));
     }
 
 }
