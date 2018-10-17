@@ -3,21 +3,22 @@ package com.example.service.impl;
 import com.example.domain.Persona;
 import com.example.repository.PersonaJpaRepository;
 import com.example.repository.impl.DataRepositoryImpl;
-import com.example.service.NombresService;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.example.service.PersonaService;
 
 @Service
-public class NombresServiceImpl implements NombresService {
+public class PersonaServiceImpl implements PersonaService {
 
     private final DataRepositoryImpl dataRepository;
 
     /**
-     * Elsta implementación del service sólo "sabe" que necesita un
+     * Esta implementación del service sólo "sabe" que necesita un
      * DataRepository, NO cómo se construye
      */
-    public NombresServiceImpl(DataRepositoryImpl dataRepository) {
+    public PersonaServiceImpl(DataRepositoryImpl dataRepository) {
         this.dataRepository = dataRepository;
     }
 
@@ -31,7 +32,7 @@ public class NombresServiceImpl implements NombresService {
         System.out.println(personaJpaRepository.findAll());
 
         System.out.println("== BUSQUEDA ==");
-//        System.out.println(personaJpaRepository.findByNombreIgnoreCaseOrderByRolDescripcionDesc("Nestor"));
+        System.out.println(personaJpaRepository.findByNombreIgnoreCaseOrderByRolDescripcionDesc("Nestor"));
     }
 
     @Override
@@ -50,6 +51,11 @@ public class NombresServiceImpl implements NombresService {
             System.out.println("Persona con id " + personaNueva.getId() + " no existe");
         }
 
+    }
+
+    @Override
+    public List<Persona> obtenerTodasLasPersonas() {
+        return personaJpaRepository.findAll();
     }
 
 }

@@ -1,10 +1,10 @@
 package com.example.controller;
 
 import com.example.domain.Persona;
-import com.example.service.NombresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
+import com.example.service.PersonaService;
 
 /**
  * Es el componente que Spring ejecuta al iniciar su contexto por implementar
@@ -18,7 +18,7 @@ public class ConsoleController implements CommandLineRunner {
      * todo lo necesario para usarlo. Al igual que ponerlo en el constructor
      */
     @Autowired
-    private NombresService busquedaService;
+    private PersonaService busquedaService;
 
     @Override
     public void run(String... strings) throws Exception {
